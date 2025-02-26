@@ -82,21 +82,25 @@ router.get("/get-user/:id",authMiddleware,async(req,res)=>{
     }
 })
 
-// get all users 
-router.get("/get-all-users",authMiddleware,async(req,res)=>{
-    try{
-        // get all users without email 
-        const users = await pool.query("SELECT id,name,type FROM users WHERE email IS NULL OR email ='' ");
-        if(users.rows.length === 0 ){
-            return res.status(404).json("user not found!");
+// Get all users 
+router.get("/get-all-users", authMiddleware, async (req, res) => {
+    try {
+        // Get users who do NOT have an email 
+        const users = await pool.query(
+            "SELECT id, name, type FROM users WHERE email IS NULL OR email = ''"
+        );
+
+        if (users.rows.length === 0) {
+            return res.status(404).json("No users found without an email!");
         }
-        const allUsers = users.rows;
-        return res.status(200).json(allUsers);
-    }catch(err){
-        console.error("Error: ",err);
-        return res.status(404).json({ message: "User data not found" });
+
+        return res.status(200).json(users.rows);
+    } catch (err) {
+        console.error("Error: ", err);
+        return res.status(500).json({ message: "Error retrieving user data" });
     }
-})
+});
+
 
 
 //add users with name and type
