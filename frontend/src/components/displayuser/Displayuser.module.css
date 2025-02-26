@@ -1,0 +1,65 @@
+.displayuser {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+  }
+  
+  .searchContainer {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+  
+  .searchInput, .filterSelect {
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 250px;
+    background: #f9f9f9;
+    transition: all 0.3s ease;
+  }
+  
+  .searchInput:hover, .filterSelect:hover {
+    border-color: #6e8efb;
+    background: #fff;
+  }
+  
+  .searchInput:focus, .filterSelect:focus {
+    outline: none;
+    border-color: #a777e3;
+    box-shadow: 0 0 8px rgba(167, 119, 227, 0.4);
+    background: #fff;
+  }
+  
+  .searchButton {
+    padding: 12px 20px;
+    background: #6e8efb;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .searchButton:hover {
+    background: #a777e3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(167, 119, 227, 0.5);
+  }
+  
+  @media (max-width: 768px) {
+    .searchContainer {
+      flex-direction: column;
+    }
+    .searchInput, .filterSelect {
+      width: 100%;
+    }
+  }

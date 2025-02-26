@@ -1,0 +1,101 @@
+.usersList {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .userCard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .userCard:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .userInfo h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  .userInfo p {
+    margin: 0.3rem 0 0;
+    font-size: 0.95rem;
+    color: #666;
+  }
+  
+  .deleteIcon {
+    width: 28px;
+    height: 28px;
+    color: #ff4d4d;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .deleteIcon:hover {
+    color: #e63939;
+    transform: scale(1.2);
+  }
+  
+  .noData {
+    text-align: center;
+    color: #666;
+    font-size: 1.1rem;
+    margin-top: 2rem;
+  }
+  
+  .loading {
+    --speed-of-animation: 0.9s;
+    --gap: 6px;
+    --first-color: #6e8efb;
+    --second-color: #a777e3;
+    --third-color: #f6bb02;
+    --fourth-color: #49a84c;
+    --fifth-color: #2196f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: var(--gap);
+    height: 100px;
+  }
+  
+  .loading span {
+    width: 6px;
+    height: 50px;
+    background: var(--first-color);
+    animation: scale var(--speed-of-animation) ease-in-out infinite;
+  }
+  
+  .loading span:nth-child(2) {
+    background: var(--second-color);
+    animation-delay: -0.8s;
+  }
+  
+  .loading span:nth-child(3) {
+    background: var(--third-color);
+    animation-delay: -0.7s;
+  }
+  
+  .loading span:nth-child(4) {
+    background: var(--fourth-color);
+    animation-delay: -0.6s;
+  }
+  
+  .loading span:nth-child(5) {
+    background: var(--fifth-color);
+    animation-delay: -0.5s;
+  }
+  
+  @keyframes scale {
+    0%, 40%, 100% { transform: scaleY(0.05); }
+    20% { transform: scaleY(1); }
+  }
